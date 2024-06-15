@@ -1,0 +1,28 @@
+<div class="w-full px-8 flex space-x-4 justify-between items-start overflow-hidden">
+  <ul class="flex-2">
+    <li *ngFor="let user of users" (click)="onSelectUser(user)">
+      <div class="mb-2">
+        <button
+          class="w-full p-2 flex items-center text-white space-x-4 rounded-md"
+          [ngClass]="{ 'bg-purple-400': user.id === selectedUser().id }"
+        >
+          <div class="h-8 w-8 rounded-full bg-gray-300 overflow-clip">
+            <img [src]="'assets/' + user.avatar" [alt]="user.name" />
+          </div>
+          <span class="text-lg text-nowrap overflow-hidden">{{
+            user.name
+          }}</span>
+        </button>
+      </div>
+    </li>
+  </ul>
+  <div class="flex-1 max-w-3xl">
+    <app-tasks [selectedUser]="selectedUser()" (toggleFormVis)="toggleFormVisibility()"/>
+  </div>
+  <div
+    class="absolute top-1/2 left-1/2 tranform -translate-x-1/2 -translate-y-1/2"
+    [ngClass]="{'hidden': !formVisible}"
+  >
+    <!-- <app-form/> -->
+  </div>
+</div>
