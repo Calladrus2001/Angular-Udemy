@@ -1,8 +1,14 @@
 <div class="p-8 h-full min-h-screen w-screen flex flex-col gap-8 bg-neutral-900">
   <h1 class="text-xl font-medium text-white text-center">Investment Calculator</h1>
-  <div class="p-4 mx-auto w-1/3 bg-gradient-to-b from-emerald-700 from-10% via-emerald-600 via-70% to-emerald-500 rounded-sm">
-    <div class="grid grid-cols-2 grid-rows-2">
-
+  <div class="p-8 mx-auto w-1/3 min-w-96 bg-gradient-to-b from-emerald-700 from-10% via-emerald-600 via-70% to-emerald-500 rounded-sm">
+    <div class="grid grid-cols-2 grid-rows-2 gap-8 mb-8">
+      <app-grid-input displayText="INITIAL INVESTMENT" [value]="init_investment" (valueChange)="init_investment = $event"/>
+      <app-grid-input displayText="ANNUAL INVESTMENT" [value]="annual_investment" (valueChange)="annual_investment = $event"/>
+      <app-grid-input displayText="EXPECTED RETURN" [value]="exp_return" (valueChange)="exp_return = $event"/>
+      <app-grid-input displayText="DURATION" [value]="duration" (valueChange)="duration = $event"/>
     </div>
+    <button class="w-full p-2 bg-emerald-300 text-center text-xl font-bold rounded-md" (click)="calculate(init_investment, annual_investment, exp_return, duration)">
+      Calculate
+    </button>
   </div>
 </div>
