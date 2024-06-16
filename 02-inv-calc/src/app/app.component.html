@@ -11,4 +11,7 @@
       Calculate
     </button>
   </div>
+  @if (annualData.length !== 0) {
+    <app-result [annualData]="annualData"/>
+  }
 </div>

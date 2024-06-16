@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { yearData } from '../../models/yearData';
 
 @Component({
   selector: 'app-result',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   templateUrl: './result.component.html',
 })
 export class ResultComponent {
-
+  @Input() annualData!: yearData[]
 }

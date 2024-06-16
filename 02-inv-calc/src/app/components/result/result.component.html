@@ -1,1 +1,18 @@
-<p>result works!</p>
+<table class="mx-auto">
+  <tr class="p-2 text-emerald-500 font-medium">
+    <th>Year</th>
+    <th>Investment Value</th>
+    <th>Interest(Year)</th>
+    <th>Total Interest</th>
+    <th>Invested Capital</th>
+  </tr>
+  @for (data of annualData; track data) {
+    <tr class="text-white font-medium">
+      <td>{{data.year}}</td>
+      <td>{{data.annualInvestment}}</td>
+      <td>{{data.interest}}</td>
+      <td>{{data.totalInterest}}</td>
+      <td>{{data.totalAmountInvested}}</td>
+    </tr>
+  }
+</table>
